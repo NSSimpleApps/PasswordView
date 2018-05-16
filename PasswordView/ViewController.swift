@@ -11,7 +11,6 @@ import UIKit
 class ViewController: UIViewController {
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         
         self.edgesForExtendedLayout = .all
@@ -27,8 +26,8 @@ class ViewController: UIViewController {
         let top = NSLayoutConstraint(item: passwordView,
                                      attribute: .top,
                                      relatedBy: .equal,
-                                     toItem: self.topLayoutGuide,
-                                     attribute: .bottom,
+                                     toItem: self.view.safeAreaLayoutGuide,
+                                     attribute: .top,
                                      multiplier: 1,
                                      constant: 8)
         let left = NSLayoutConstraint(item: self.view,
@@ -61,20 +60,15 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: PasswordViewDelegate {
-    
     func enterPasswordDidFinish(_ passwordView: PasswordView) {
-        
         if passwordView.text == "1234" {
-            
             passwordView.tintColor = PasswordView.greenColor
             
         } else {
-            
             passwordView.tintColor = PasswordView.redColor
         }
         
         passwordView.shake {
-            
             passwordView.removeText()
             passwordView.tintColor = PasswordView.blueColor
         }
