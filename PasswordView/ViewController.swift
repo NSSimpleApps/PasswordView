@@ -30,14 +30,14 @@ class ViewController: UIViewController {
                                      attribute: .top,
                                      multiplier: 1,
                                      constant: 8)
-        let left = NSLayoutConstraint(item: self.view,
+        let left = NSLayoutConstraint(item: self.view!,
                                       attribute: .leadingMargin,
                                       relatedBy: .equal,
                                       toItem: passwordView,
                                       attribute: .leading,
                                       multiplier: 1,
                                       constant: 0)
-        let right = NSLayoutConstraint(item: self.view,
+        let right = NSLayoutConstraint(item: self.view!,
                                        attribute: .trailingMargin,
                                        relatedBy: .equal,
                                        toItem: passwordView,
